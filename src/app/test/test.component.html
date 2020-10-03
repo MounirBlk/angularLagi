@@ -1,1 +1,49 @@
 <p>test works!</p>
+<p>{{ name }}</p>
+<p>{{ GetUser() }}</p>
+<p>
+    <input type="text" [class]="boolTest ? danger : success" [id]="name" [value]="name" [disabled]="boolTest">
+    <input type="text" value="{{name}}">
+</p>
+<h2 [class.text-success]="!boolTest">Yolo</h2>
+<h2 [ngClass]="colorClasses">colorClasses</h2>
+<h2 [style.color]="boolTest ? 'darkblue' : 'darkgreen' ">ternaire style color</h2>
+<h2 [ngStyle]="titleStyles">titleStyles</h2>
+<button (click)="boolTest=!boolTest">{{ boolTest }}</button>
+
+<span *ngIf="boolTest; else elseBoolTest"> Allumé </span>
+<ng-template #elseBoolTest>
+    <span> Eteint </span>
+</ng-template>
+
+<span *ngIf="boolTest;then thenBoolTesting; else elseBoolTesting"></span>
+<ng-template #thenBoolTesting>
+    <span style="color:darkblue"> Allumé car boolTest={{ boolTest }}</span>
+</ng-template>
+<ng-template #elseBoolTesting>
+    <span style="color:darkorange"> Eteint car boolTest={{ boolTest }} </span>
+</ng-template>
+
+<div [ngSwitch]="lettre.toLowerCase()">
+    <span *ngSwitchCase="'a'">Lettre A</span>
+    <span *ngSwitchCase="'b'">Lettre B</span>
+    <span *ngSwitchCase="'c'">Lettre C</span>
+    <span *ngSwitchDefault>Lettre Inconnu</span>
+</div>
+
+<br />
+<input type="text" [(ngModel)]="name">
+<input type="text" #myInput value="">
+<button (click)="onClickBtn(myInput.value)">Click</button>
+<span class="text-success">{{ title }}</span>
+
+<!--even as e pour 1 fois sur 2 avec true de debut pour l element 0-->
+<!--odd as o pour 1 fois sur 2 avec false de debut pour l element 0-->
+<div *ngFor="let pays of listPays; first as premier;last as dernier">
+    <span [style.color]="premier ? 'darkblue' : dernier  ? 'darkorange' : black">
+        id={{ pays.id }} name={{ pays.name }}
+    </span>
+</div>
+
+
+

@@ -1,0 +1,15 @@
+<h2>You selected techno with id = {{ technoId }}</h2>
+<p>
+    <button (click)="showOverview()">Overview</button>
+    <button (click)="showContact()">Contact</button>
+</p>
+
+<router-outlet></router-outlet>
+
+<p>
+    <button style="cursor:pointer" (click)="goPrevious()"> Previous </button>
+    <button style="cursor:pointer" (click)="goNext()"> Next </button>
+</p>
+<div>
+    <button (click)="gotoDepartments()">Back</button>
+</div>

@@ -1,0 +1,4 @@
+<p>Liste users: </p>
+<ul *ngFor="let user of users">
+    <li> {{ user.id }} - {{ user.name}} : {{ user.email | lowercase}}</li>
+</ul>

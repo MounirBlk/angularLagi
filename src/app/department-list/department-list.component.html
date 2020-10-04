@@ -1,0 +1,5 @@
+<h2>Technos users: </h2>
+<ul (click)="onSelectDpt(techno.id)" [class.text-success]="isSelected(techno.id)" *ngFor="let techno of technos">
+    <li style="cursor:pointer"> {{ techno.id }} - {{ techno.name}}</li>
+</ul>
+
